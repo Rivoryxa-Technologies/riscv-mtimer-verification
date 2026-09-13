@@ -100,12 +100,23 @@ a_mtip_stays_pending: assert (!($past(mtip) && !$past(we) && $past(mtime) != '1)
 
 `sby -f formal/mtimer.sby bug_bmc` fails it. The trace is in
 `evidence/02_counterexample.vcd`. `scripts/trace_summary.py` prints it as a table
-(`evidence/02_counterexample_table.txt`). Read it like this: software writes
-`mtimecmp = 1`; `mtime` reaches 1 and MTIP is set; on the next count `mtime` becomes 2
-and MTIP drops, although nothing wrote `mtime` or `mtimecmp`. SymbiYosys reports the
-failure one step later, because assertions in a clocked block are checked on the
-following step. The solver is free to pick values for inputs that do not matter, so
-your trace can show different values in those columns.
+(`evidence/02_counterexample_table.txt`):
+
+```
+step      rst_n         we       addr      wdata       halt      state      mtime   mtimecmp       mtip
+   0          0          0          1          1          0          0          0  18446744073709551615          0
+   1          1          1          1          1          0          0          0  18446744073709551615          0
+   2          1          0          0         16          0          0          1          1          1
+   3          1          1          2  2305843009213693953          0          0          2          1          0
+   4          1          0          1          1          0          0          3          1          0
+   5          1          0          1          1          0          0          3          1          0
+```
+
+At step 1 software writes `mtimecmp = 1`. At step 2 `mtime` equals `mtimecmp` and MTIP
+is set, with no write on that step. At step 3 `mtime` is 2 and MTIP has dropped. That
+breaks the property. SymbiYosys reports it at step 4, because assertions in a clocked
+block are checked on the following step. The write at step 3 goes to `div` (address 2)
+and does not affect the result; the solver is free to choose inputs that do not matter.
 
 ### 3. Root cause
 

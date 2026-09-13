@@ -1,0 +1,8 @@
+waiver/div_never_zero.smt2:
+unsat
+
+waiver/check_is_not_vacuous.smt2:
+sat
+((clk_hz 67108862)
+ (tick_hz 67108864)
+ (div_value 0))

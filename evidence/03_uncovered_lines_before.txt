@@ -1,0 +1,9 @@
+42:%000000         S_HALTED: begin
+43:%000000           if (!halt) state <= S_RESUME;    // hole A: release after a halt
+45:%000000         S_RESUME: begin
+46:%000000           state <= S_RUN;                  // hole A: resume cycle
+48:%000000         default: begin
+49:%000000           state <= S_RUN;                  // hole B: encoding 2'b11
+72:%000000         if (div == '0) begin
+73:%000000           mtime    <= mtime + 64'd1;         // hole C: div = 0 means no prescaling
+89:%000000       default:    rdata = '0;             // hole D: read of the unused address 3

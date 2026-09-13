@@ -1,0 +1,23 @@
+PASS  old regression passes on the seeded bug (3 of 3)
+PASS  bug report test fails on the seeded bug: MTIP drops after compare
+PASS  bug report test fails on the seeded bug: mtimecmp written in the past
+PASS  simulation totals on the seeded bug: 5 tests, 3 pass, 2 fail
+PASS  formal finds a counterexample to a_mtip_stays_pending on the seeded bug
+PASS  formal run on the seeded bug used z3
+PASS  coverage before: hole A is uncovered
+PASS  coverage before: hole B is uncovered
+PASS  coverage before: hole C is uncovered
+PASS  coverage before: hole D is uncovered
+PASS  fixed RTL: 7 tests, 7 pass, 0 fail
+PASS  coverage after: hole A is covered by a directed test
+PASS  coverage after: hole D is covered by a directed test
+PASS  coverage after: only holes B and C remain
+PASS  fixed RTL: a_mtip_stays_pending and a_state_legal proven by k induction
+PASS  cover reached: c_mtip_stays_trigger
+PASS  cover reached: c_mtip_after_compare
+PASS  cover reached: c_resume
+PASS  cover reached: c_div_zero_running
+PASS  a_mtip_stays_pending fails on the seeded bug
+PASS  a_state_legal fails on a mutant that enters state 2'b11
+PASS  waiver: no allowed clock setting gives div = 0 or a value above 65535 (unsat)
+PASS  waiver check is not vacuous: widened limits give a bad setting (sat)

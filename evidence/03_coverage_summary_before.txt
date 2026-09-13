@@ -1,0 +1,10 @@
+Coverage Summary:
+  line      : 66.7% (10/15)
+  toggle    : 0.0% ( 0/ 0)
+  branch    : 71.4% (10/14)
+  expr      : 0.0% ( 0/ 0)
+  fsm_state : 0.0% ( 0/ 0)
+  fsm_arc   : 0.0% ( 0/ 0)
+Annotation Summary:
+  lines with all attached points covered : 36.00%  (15/41)
+See lines with '%00' in annotated

@@ -1,0 +1,8 @@
+run date (UTC): 2026-09-13 10:04
+Darwin 25.6.0
+Yosys 0.67+post (git sha1 b8e7da6f40ae8f552c116bf6c359b07c6533e159, Release, AppleClang clang++ 21.0.0.21000099)
+Z3 version 4.16.0 - 64 bit
+Verilator 5.050 2026-07-01 rev vUNKNOWN-built20260701
+Python 3.14.2
+cocotb 2.1.0
+sby: YosysHQ/sby git commit b1a1e98

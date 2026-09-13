@@ -1,0 +1,55 @@
+SBY 15:34:44 [mtimer_cover] Removing directory '/Users/avishas/developer/riscv-mtimer-verification-check/formal/mtimer_cover'.
+SBY 15:34:44 [mtimer_cover] Copy '/Users/avishas/developer/riscv-mtimer-verification-check/formal/../rtl/mtimer.sv' to '/Users/avishas/developer/riscv-mtimer-verification-check/formal/mtimer_cover/src/mtimer.sv'.
+SBY 15:34:44 [mtimer_cover] Copy '/Users/avishas/developer/riscv-mtimer-verification-check/formal/mtimer_props.svh' to '/Users/avishas/developer/riscv-mtimer-verification-check/formal/mtimer_cover/src/mtimer_props.svh'.
+SBY 15:34:44 [mtimer_cover] engine_0: smtbmc z3
+SBY 15:34:44 [mtimer_cover] base: starting process "cd mtimer_cover/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 15:34:44 [mtimer_cover] base: finished (returncode=0)
+SBY 15:34:44 [mtimer_cover] prep: starting process "cd mtimer_cover/model; yosys -ql design_prep.log design_prep.ys"
+SBY 15:34:44 [mtimer_cover] prep: finished (returncode=0)
+SBY 15:34:44 [mtimer_cover] smt2: starting process "cd mtimer_cover/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 15:34:44 [mtimer_cover] smt2: finished (returncode=0)
+SBY 15:34:44 [mtimer_cover] engine_0: starting process "cd mtimer_cover; yosys-smtbmc -s z3 --presat -c --noprogress -t 12  --append 0 --dump-vcd engine_0/trace%.vcd --dump-yw engine_0/trace%.yw --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Solver: z3
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Checking cover reachability in step 1..
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Checking cover reachability in step 2..
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Checking cover reachability in step 3..
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Reached cover statement in step 3 at mtimer: c_div_zero_running
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace0.yw
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Checking cover reachability in step 3..
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Reached cover statement in step 3 at mtimer: c_mtip_after_compare
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace1.vcd
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace1_tb.v
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace1.smtc
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace1.yw
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Checking cover reachability in step 3..
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Checking cover reachability in step 4..
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Reached cover statement in step 4 at mtimer: c_resume
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace2.vcd
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace2_tb.v
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace2.smtc
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace2.yw
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Checking cover reachability in step 4..
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Reached cover statement in step 4 at mtimer: c_mtip_stays_trigger
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace3.vcd
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace3_tb.v
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace3.smtc
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace3.yw
+SBY 15:34:44 [mtimer_cover] engine_0: ##   0:00:00  Status: passed
+SBY 15:34:44 [mtimer_cover] engine_0: finished (returncode=0)
+SBY 15:34:44 [mtimer_cover] engine_0: Status returned by engine: pass
+SBY 15:34:44 [mtimer_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:34:44 [mtimer_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:34:44 [mtimer_cover] summary: engine_0 (smtbmc z3) returned pass
+SBY 15:34:44 [mtimer_cover] summary: cover trace: mtimer_cover/engine_0/trace0.vcd
+SBY 15:34:44 [mtimer_cover] summary:   reached cover statement mtimer.c_div_zero_running at mtimer_props.svh:31.7-31.64 step 3
+SBY 15:34:44 [mtimer_cover] summary: cover trace: mtimer_cover/engine_0/trace1.vcd
+SBY 15:34:44 [mtimer_cover] summary:   reached cover statement mtimer.c_mtip_after_compare at mtimer_props.svh:28.7-28.61 step 3
+SBY 15:34:44 [mtimer_cover] summary: cover trace: mtimer_cover/engine_0/trace2.vcd
+SBY 15:34:44 [mtimer_cover] summary:   reached cover statement mtimer.c_resume at mtimer_props.svh:29.7-29.54 step 4
+SBY 15:34:44 [mtimer_cover] summary: cover trace: mtimer_cover/engine_0/trace3.vcd
+SBY 15:34:44 [mtimer_cover] summary:   reached cover statement mtimer.c_mtip_stays_trigger at mtimer_props.svh:27.7-27.100 step 4
+SBY 15:34:44 [mtimer_cover] DONE (PASS, rc=0)
