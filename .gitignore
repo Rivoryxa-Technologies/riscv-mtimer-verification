@@ -1,0 +1,12 @@
+formal/mtimer_bug_bmc/
+formal/mtimer_prove/
+formal/mtimer_cover/
+formal/mutant/
+tb/sim_build/
+tb/results.xml
+tb/coverage.dat
+tb/annotated*/
+tb/__pycache__/
+__pycache__/
+formal/mtimer/
+.venv/
