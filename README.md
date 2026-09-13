@@ -98,7 +98,7 @@ Property, in `formal/mtimer_props.svh`:
 a_mtip_stays_pending: assert (!($past(mtip) && !$past(we) && $past(mtime) != '1) || mtip);
 ```
 
-`sby -f formal/mtimer.sby bug_bmc` fails it. The trace is in
+`cd formal && sby -f mtimer.sby bug_bmc` fails it. The trace is in
 `evidence/02_counterexample.vcd`. `scripts/trace_summary.py` prints it as a table
 (`evidence/02_counterexample_table.txt`):
 
@@ -129,7 +129,7 @@ The specification requires `mtime >= mtimecmp`.
 The fixed line in `rtl/mtimer.sv` is `assign mtip = (mtime >= mtimecmp);`.
 
 - Simulation: all 7 tests pass (`evidence/04_sim_fixed_all_tests.log`).
-- Formal: `sby -f formal/mtimer.sby prove` proves `a_mtip_stays_pending` and
+- Formal: `cd formal && sby -f mtimer.sby prove` proves `a_mtip_stays_pending` and
   `a_state_legal` by k induction, which covers every reachable state
   (`evidence/05_formal_prove_fixed.log`).
 
